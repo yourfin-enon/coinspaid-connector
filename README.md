@@ -1,0 +1,1 @@
+# coinspaid-connector
