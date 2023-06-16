@@ -55,6 +55,15 @@ pub struct Withdrawal {
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct DepositAddress {
+    pub id: i32,
+    pub currency: String,
+    pub address: String,
+    pub tag: Option<String>,
+    pub foreign_id: Option<String>,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Address {
     pub id: i32,
     pub currency: String,
@@ -70,7 +79,7 @@ pub struct CallbackData {
     pub foreign_id: Option<String>,
     #[serde(rename = "type")]
     pub callback_type: String,
-    pub crypto_address: Address,
+    pub crypto_address: DepositAddress,
     pub error: String,
     pub status: String,
     pub currency_sent: CurrencySentData,
