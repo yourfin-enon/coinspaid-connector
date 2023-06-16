@@ -114,7 +114,7 @@ pub struct Transaction {
     pub transaction_type: String,
     #[serde(rename = "type")]
     pub data_type: String,
-    pub tag: Option<i64>,
+    pub tag: Option<String>,
     pub amount: String,
     #[serde(rename = "txid")]
     pub tx_id: String,
