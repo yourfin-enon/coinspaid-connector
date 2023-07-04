@@ -196,6 +196,7 @@ pub enum TransactionStatus {
     NotConfirmed = 0,
     Confirmed = 1,
     Canceled = 2,
+    Declined = 3,
 }
 
 impl TransactionStatus {
@@ -229,6 +230,8 @@ impl fmt::Display for TransactionStatus {
             TransactionStatus::Confirmed => format!("{:?}", self).to_lowercase(),
             TransactionStatus::NotConfirmed => "not_confirmed".to_string(),
             TransactionStatus::Canceled => format!("{:?}", self).to_lowercase(),
+            TransactionStatus::Declined => format!("{:?}", self).to_lowercase(),
+
         };
 
         write!(f, "{}", str)
