@@ -181,7 +181,7 @@ impl CoinsPaidRestClient {
             StatusCode::BAD_REQUEST => {
                 let error = response.text().await?;
                 bail!(format!(
-                    "Received bad request status. Response: {:?}. Request: {:?}",
+                    "Received bad request status. Request: {:?}. Response: {:?}",
                     request_json, error
                 ));
             }
