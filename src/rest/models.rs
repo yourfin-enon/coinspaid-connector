@@ -126,7 +126,7 @@ pub struct Transaction {
     pub tag: Option<String>,
     pub amount: String,
     #[serde(rename = "txid")]
-    pub tx_id: String,
+    pub tx_id: Option<String>,
     #[serde(rename = "riskscore")]
     pub risk_score: Option<String>,
     pub confirmations: String,
