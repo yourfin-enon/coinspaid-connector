@@ -78,12 +78,12 @@ pub struct CallbackData {
     pub id: i32,
     pub foreign_id: Option<String>,
     #[serde(rename = "type")]
-    pub callback_type: String,
+    pub callback_type: Option<String>,
     pub crypto_address: DepositAddress,
     pub error: String,
     pub status: String,
-    pub currency_sent: CurrencySentData,
-    pub currency_received: CurrencyReceivedData,
+    pub currency_sent: Option<CurrencySentData>,
+    pub currency_received: Option<CurrencyReceivedData>,
     pub transactions: Vec<Transaction>,
     pub fees: Vec<Fee>,
 }
