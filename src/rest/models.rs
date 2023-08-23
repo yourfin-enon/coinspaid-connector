@@ -197,14 +197,17 @@ pub enum TransactionStatus {
     Confirmed = 1,
     Canceled = 2,
     Declined = 3,
+    Pending = 4,
 }
 
 impl TransactionStatus {
     pub fn iterator() -> Iter<'static, TransactionStatus> {
-        static VALUES: [TransactionStatus; 3] = [
+        static VALUES: [TransactionStatus; 5] = [
             TransactionStatus::Confirmed,
             TransactionStatus::NotConfirmed,
             TransactionStatus::Canceled,
+            TransactionStatus::Declined,
+            TransactionStatus::Pending,
         ];
         VALUES.iter()
     }
@@ -231,7 +234,7 @@ impl fmt::Display for TransactionStatus {
             TransactionStatus::NotConfirmed => "not_confirmed".to_string(),
             TransactionStatus::Canceled => format!("{:?}", self).to_lowercase(),
             TransactionStatus::Declined => format!("{:?}", self).to_lowercase(),
-
+            TransactionStatus::Pending => format!("{:?}", self).to_lowercase(),
         };
 
         write!(f, "{}", str)
