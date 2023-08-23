@@ -195,7 +195,7 @@ impl fmt::Display for TransactionDataType {
 pub enum TransactionStatus {
     NotConfirmed = 0,
     Confirmed = 1,
-    Canceled = 2,
+    Cancelled = 2,
     Declined = 3,
     Pending = 4,
 }
@@ -205,7 +205,7 @@ impl TransactionStatus {
         static VALUES: [TransactionStatus; 5] = [
             TransactionStatus::Confirmed,
             TransactionStatus::NotConfirmed,
-            TransactionStatus::Canceled,
+            TransactionStatus::Cancelled,
             TransactionStatus::Declined,
             TransactionStatus::Pending,
         ];
@@ -232,7 +232,7 @@ impl fmt::Display for TransactionStatus {
         let str = match self {
             TransactionStatus::Confirmed => format!("{:?}", self).to_lowercase(),
             TransactionStatus::NotConfirmed => "not_confirmed".to_string(),
-            TransactionStatus::Canceled => format!("{:?}", self).to_lowercase(),
+            TransactionStatus::Cancelled => format!("{:?}", self).to_lowercase(),
             TransactionStatus::Declined => format!("{:?}", self).to_lowercase(),
             TransactionStatus::Pending => format!("{:?}", self).to_lowercase(),
         };
